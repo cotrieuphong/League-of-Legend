@@ -1,0 +1,81 @@
+.welcome{
+  height: 50vh;
+}
+
+.champ-wrapper{
+  background: rgba(#000, .9);
+  border-radius: 10px;
+  border: 1px solid #937341;
+  h1{
+    color: #937341;
+  }
+}
+
+.champ-name{
+  font-size: 14px;
+  color: #937341;
+  margin-bottom: 0;
+  display: block;
+  position: relative;
+
+}
+
+.info-container{
+  transition: all .3s ease;
+  display: inline-block;
+  padding: 20px 40px!important;
+  a{
+    text-decoration: none;
+    display: block;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    position: relative;
+    transition: all .3s ease;
+    span{
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: block;
+      transition: all .1s ease;
+      img{
+        width: 90px;
+        height: 90px;
+        display: inline-block;
+        margin: -5px 0 0 -5px;
+      }
+    }
+    &:hover{
+      transform: scale(1.2);
+      span{
+        box-shadow: 0 0 10px #937341, 0 0 15px #937341;
+      }
+    }
+  }
+}
+
+.frame{
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 100px;
+  top: -10px;
+  left: -10px;
+}
+
+h1{
+  color: #fff;
+  margin-bottom: 100px!important;
+  position: relative;
+  &:after{
+    position: absolute;
+    display: block;
+    content: '';
+    width: 50%;
+    height: 1px;
+    left: 25%;
+    bottom: -40px;
+    background: #937341;
+  }
+}

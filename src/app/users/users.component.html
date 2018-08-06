@@ -1,0 +1,21 @@
+<div class="row no-gutters p-4 champ-container">
+  <div class="col-9 m-auto welcome">
+    <!-- <input id="text" (keyup)="press(text.value)"> -->
+  </div>
+  <div class="col-9 m-auto text-center champ-wrapper">
+    <h1 class="pt-5">Tướng</h1>
+    <div class="info-container text-center p-3" *ngFor="let champ of champs$">
+
+      <a routerLink="/details/{{champ.id}}">
+        <span class="icon">
+          <img src="http://ddragon.leagueoflegends.com/cdn/8.15.1/img/champion/{{champ.img}}" alt="">
+        </span>
+        <img src="./assets/img/frame.png" class="frame">
+      </a>
+
+      <p class="champ-name py-3">{{champ.name}}</p>
+
+    </div>
+  </div>
+
+</div>

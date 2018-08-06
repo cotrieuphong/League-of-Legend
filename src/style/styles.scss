@@ -1,0 +1,19 @@
+*{
+  font-family: Open Sans;
+}
+
+body{
+  &::-webkit-scrollbar{
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track{
+    background: #fff
+  }
+  &::-webkit-scrollbar-thumb{
+    background: #111;
+  }
+}
+
+.noscroll{
+  overflow: hidden
+}
