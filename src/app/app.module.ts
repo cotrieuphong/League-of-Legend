@@ -6,13 +6,21 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { UsersComponent } from './users/users.component';
 import { DetailsComponent } from './details/details.component';
+import { SumSpellComponent } from './sum-spell/sum-spell.component';
+import { SumDetailComponent } from './sum-detail/sum-detail.component';
+import { RuneComponent } from './rune/rune.component';
+import { PaymentConfirmComponent } from './payment/payment-confirm/payment-confirm.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     UsersComponent,
-    DetailsComponent
+    DetailsComponent,
+    SumSpellComponent,
+    SumDetailComponent,
+    RuneComponent,
+    PaymentConfirmComponent
   ],
   imports: [
     BrowserModule,

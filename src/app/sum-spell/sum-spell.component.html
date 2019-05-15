@@ -1,0 +1,23 @@
+<div class="row no-gutters p-5 spell-container">
+  <div class="col-12 header text-center pt-4 mt-4">
+    <h1>Phép bổ trợ</h1>
+    <img src="./assets/img/divider.png" class="divider">
+  </div>
+  <div class="col-12">
+    <div class="spell-grid">
+      <div class="spell-box" *ngFor="let spell of spells">
+        <img src="http://ddragon.leagueoflegends.com/cdn/7.2.1/img/spell/{{spell.img}}" alt="">
+        <p class="pt-3 m-0">
+          {{spell.name}}
+        </p>
+        <div class="description p-2">
+          <p class="m-0">{{spell.des}}</p>
+          <p class="m-0">
+            <img src="./assets/img/cd.png" alt="">
+            {{spell.cd}}s
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

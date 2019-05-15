@@ -1,9 +1,35 @@
 <div class="row no-gutters p-4 champ-container">
-  <div class="col-9 m-auto welcome">
-    <!-- <input id="text" (keyup)="press(text.value)"> -->
+  <div class="col-12">
+    <img src="./assets/img/champion.png" class="champion">
+    <input id="text" (input)="getNames($event)" [value]="input" placeholder="Nhập tên tướng" class="m-auto p-2">
+    <img src="./assets/img/divider.png" class="divider pb-5">
   </div>
-  <div class="col-9 m-auto text-center champ-wrapper">
-    <h1 class="pt-5">Tướng</h1>
+  <div class="col-10 m-auto card-grid">
+    <div class="card-holder ds" *ngFor="let champ of champs$">
+      <div class="card-info">
+        <a routerLink="/details/{{champ.id}}">
+          <div class="champion-info">
+            <p class="champion-name py-2">{{champ.name}}</p>
+          </div>
+          <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champ.id}}_0.jpg" class="loading-screen">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-10 m-auto card-grid">
+    <div class="card-holder" *ngFor="let result of results">
+      <div class="card-info">
+        <a routerLink="/details/{{result}}">
+          <div class="champion-info">
+            <p class="champion-name py-2">{{result}}</p>
+          </div>
+          <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{result}}_0.jpg" class="loading-screen">
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-9 m-auto text-center champ-wrapper">
+    <h1 class="pt-5"><input id="text2" (input)="getNames($event)" [value]="input" placeholder="Nhập tên tướng" class="m-auto"></h1>
     <div class="info-container text-center p-3" *ngFor="let champ of champs$">
 
       <a routerLink="/details/{{champ.id}}">
@@ -16,6 +42,6 @@
       <p class="champ-name py-3">{{champ.name}}</p>
 
     </div>
-  </div>
+  </div> -->
 
 </div>

@@ -1,5 +1,5 @@
 <div class="row no-gutters detail-bg">
-
+  <p class="detail-id">{{champ$.id}}</p>
   <div class="col-12">
     <div class="row no-gutters detail-container p-2">
       <div class="col-10 m-auto text-center header">
@@ -7,15 +7,26 @@
         <img src="./assets/img/divider.png" alt="">
         <p class="title py-3">{{champ$.title}}</p>
       </div>
-      <!-- <blockquote class="col-4 m-auto blockquote text-center">
+      <blockquote class="col-6 m-auto blockquote text-center pb-5">
         <p class="m-0">{{champ$.lore}}</p>
         <footer class="blockquote-footer"><cite>{{champ$.name}}</cite></footer>
-      </blockquote> -->
+      </blockquote>
+      <div class="col-9 m-auto py-5">
+        <div class="icon-border">
+          <div class="section-header">
+            <img src="http://ddragon.leagueoflegends.com/cdn/8.16.1/img/champion/{{champ$.id}}.png" class="champion-icon">
+          </div>
+          <img src="./assets/img/frame.png" class="frame">
+          <img src="./assets/img/highlight.png" class="highlight-left">
+          <img src="./assets/img/highlight.png" class="highlight-right">
+        </div>
+      </div>
       <div class="col-12 m-auto">
         <div class="row no-gutters py-2 px-5">
           <div class="col-3 p-1">
             <div class="box loading-screen">
                 <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champ$.id}}_0.jpg" class="detail-loading-img">
+
             </div>
           </div>
           <div class="col-6 p-1">
@@ -25,13 +36,28 @@
                   <td>
                     <img src="./assets/img/hp.png">
                     <p><span class="highlight">Máu: </span>
-                      {{champ$.stats.hp}} - {{champ$.stats.hp+champ$.stats.hpperlevel*18}}
+                      <span class="as2">{{champ$.stats.hp}}</span> - <span class="as2">{{champ$.stats.hp+champ$.stats.hpperlevel*18}}</span>
                     </p>
                   </td>
                   <td>
                     <img src="./assets/img/hppl.png">
+                    <p><span class="highlight">Hồi máu: </span>
+                      <span class="as2">{{champ$.stats.hpregen}}</span> - <span class="as2">{{champ$.stats.hpregen+champ$.stats.hpregenperlevel*18}}</span>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+
+                    <img src="./assets/img/hp.png">
                     <p><span class="highlight">Máu theo cấp: </span>
-                      {{champ$.stats.hpperlevel}}
+                      <span class="as2">{{champ$.stats.hpperlevel}}</span>
+                    </p>
+                  </td>
+                  <td>
+                    <img src="./assets/img/hppl.png">
+                    <p><span class="highlight">Hồi máu theo cấp: </span>
+                      <span class="as">{{champ$.stats.hpregenperlevel}}</span>
                     </p>
                   </td>
                 </tr>
@@ -39,14 +65,29 @@
                   <td>
                     <img src="./assets/img/mp.png">
                     <p><span class="highlight">Năng lượng: </span>
-                      {{champ$.stats.mp}} - {{champ$.stats.mp+champ$.stats.mpperlevel*18}}
+                      <span class="as2">{{champ$.stats.mp}}</span> - <span class="as2">{{champ$.stats.mp+champ$.stats.mpperlevel*18}}</span>
+                    </p>
+                  </td>
+                  <td>
+                    <img src="./assets/img/mppl.png">
+                    <p><span class="highlight">Hồi năng lượng: </span>
+                      <span class="as2">{{champ$.stats.mpregen}}</span> - <span class="as2">{{champ$.stats.mpregen+champ$.stats.mpregenperlevel*18}}</span>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      <img src="./assets/img/mp.png">
+                      <span class="highlight">Năng lượng theo cấp: </span>
+                      <span class="as2">{{champ$.stats.mpperlevel}}</span>
                     </p>
                   </td>
                   <td>
                     <p>
                       <img src="./assets/img/mppl.png">
-                      <span class="highlight">Năng lượng theo cấp: </span>
-                      {{champ$.stats.mpperlevel}}
+                      <span class="highlight">Hồi năng lượng theo cấp: </span>
+                      {{champ$.stats.mpregenperlevel}}
                     </p>
                   </td>
                 </tr>
@@ -55,14 +96,14 @@
                     <p>
                       <img src="./assets/img/amor.png">
                       <span class="highlight">Giáp: </span>
-                      {{champ$.stats.armor}} - {{champ$.stats.armor+champ$.stats.armorperlevel*18}}
+                      <span class="as2">{{champ$.stats.armor}}</span> - <span class="as2">{{champ$.stats.armor+champ$.stats.armorperlevel*18}}</span>
                     </p>
                   </td>
                   <td>
                     <p>
                       <img src="./assets/img/amor.png">
                       <span class="highlight">Giáp theo cấp: </span>
-                      {{champ$.stats.armorperlevel}}
+                      <span class="as2">{{champ$.stats.armorperlevel}}</span>
                     </p>
                   </td>
                 </tr>
@@ -71,13 +112,13 @@
                     <p>
                       <img src="./assets/img/mr.png">
                       <span class="highlight">Kháng phép: </span>
-                      {{champ$.stats.spellblock}} - {{champ$.stats.spellblock+champ$.stats.spellblockperlevel*18}}
+                      <span class="as2">{{champ$.stats.spellblock}}</span> - <span class="as2">{{champ$.stats.spellblock+champ$.stats.spellblockperlevel*18}}</span>
                     </p>
                   </td>
                   <td>
                     <img src="./assets/img/mr.png">
                     <p><span class="highlight">Kháng phép theo cấp: </span>
-                      {{champ$.stats.spellblockperlevel}}
+                      <span class="as2">{{champ$.stats.spellblockperlevel}}</span>
                     </p>
                   </td>
                 </tr>
@@ -86,13 +127,13 @@
                     <p>
                       <img src="./assets/img/ad.png">
                       <span class="highlight">Sát thương: </span>
-                      {{champ$.stats.attackdamage}} - {{champ$.stats.attackdamage+champ$.stats.attackdamageperlevel*18}}
+                      <span class="as2">{{champ$.stats.attackdamage}}</span> - <span class="as2">{{champ$.stats.attackdamage+champ$.stats.attackdamageperlevel*18}}</span>
                     </p>
                   </td>
                   <td>
                     <img src="./assets/img/bonusad.png">
                     <p><span class="highlight">Sát thương theo cấp: </span>
-                      {{champ$.stats.attackdamageperlevel}}
+                      <span class="as2">{{champ$.stats.attackdamageperlevel}}</span>
                     </p>
                   </td>
                 </tr>
@@ -101,14 +142,13 @@
                     <p>
                       <img src="./assets/img/as.png">
                       <span class="highlight">Tốc độ đánh: </span>
-                      <span class="as">{{.625/(1 + champ$.stats.attackspeedoffset)}}</span> - <span class="as2">{{.625/(1 + champ$.stats.attackspeedoffset) + champ$.stats.attackspeedperlevel/10}}</span>
+                      <span class="as">{{.625/(1 + champ$.stats.attackspeedoffset)}}</span> - <span class="as">{{.625/(1 + champ$.stats.attackspeedoffset) + champ$.stats.attackspeedperlevel*18/100}}</span>
                     </p>
                   </td>
                   <td>
                     <img src="./assets/img/as.png">
                     <p><span class="highlight">Tốc độ đánh theo cáp: </span>
-                      {{champ$.stats.attackspeedperlevel/10}}
-                    </p>
+                      <span class="as">{{champ$.stats.attackspeedperlevel/100}}</span>
                   </td>
                 </tr>
                 <tr>
@@ -128,6 +168,35 @@
                 </tr>
               </table>
             </div>
+            <div class="box champion-spell p-2">
+              <div class="row no-gutters pb-2">
+                <div class="col-auto pr-2 passive-spell-icon">
+                  <img src="http://ddragon.leagueoflegends.com/cdn/8.16.1/img/passive/{{champ$.passive.image.full}}">
+                </div>
+                <div class="col-10">
+                  <p class="passive-spell-name m-0 mb-3">Nội tại - {{champ$.passive.name}}</p>
+                  <p class="m-0 pt-2 passive-spell-desc">{{champ$.passive.description}}</p>
+                </div>
+              </div>
+              <div class="row no-gutters pb-2" *ngFor="let spell of spells$" class="spells py-2">
+                <div class="col-auto p-0 pr-2">
+                  <img src="http://ddragon.leagueoflegends.com/cdn/8.16.1/img/spell/{{spell.image.full}}" class="spell-icon">
+                </div>
+                <div class="col-10 p-0 pr-2">
+                  <p class="spell-name m-0 mb-3">{{spell.name}}</p>
+                  <p [innerHTML]="spell.description" class="desc m-0"></p>
+                  <div class="resource py-4">
+                    <img src="./assets/img/mp.png" alt="">
+                    Năng lượng:
+                    <p>{{spell.costBurn}}</p>
+                    <img src="./assets/img/cd.png" class="ml-5">
+                    Thời gian hồi(s):
+                    <p>{{spell.cooldownBurn}}</p>
+                  </div>
+                  <p [innerHTML]="spell.tooltip" class="m-0"></p>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="col-3 p-1">
             <div class="box role-container text-center">
@@ -137,78 +206,46 @@
                 <p class="role">{{champ$.tags[0]}}</p>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-9 m-auto loading-screen">
-        <div class="row no-gutters">
-          <div class="col-3 shadow">
-            <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champ$.id}}_0.jpg" class="detail-loading-img">
-            <p class="detail-name">{{champ$.name}}</p>
-            <p hidden class="detail-id">{{champ$.id}}</p>
-          </div>
-          <div class="col-9 pl-2">
-            <div class="detail shadow">
-              <h3 class="p-2 shadow">{{champ$.title}}</h3>
-              <div class="row no-gutters champ-info px-5">
-                <div class="col-5 offset-2">
-                  <p><span>Máu: </span>{{champ$.stats.hp}}</p></div>
-                <div class="col-5">
-                  <p><span>Máu theo cấp: </span>{{champ$.stats.hpperlevel}}</p>
-                </div>
-                <div class="col-5 offset-2">
-                  <p><span>Năng lượng: </span>{{champ$.stats.mp}}</p></div>
-                <div class="col-5">
-                  <p><span>Năng lượng theo cấp: </span>{{champ$.stats.mpperlevel}}</p>
-                </div>
-                <div class="col-5 offset-2">
-                  <p><span>Giáp: </span>{{champ$.stats.armor}}</p></div>
-                <div class="col-5">
-                  <p><span>Giáp theo cấp: </span>{{champ$.stats.armorperlevel}}</p>
-                </div>
-                <div class="col-5 offset-2">
-                  <p><span>Kháng phép: </span>{{champ$.stats.spellblock}}</p></div>
-                <div class="col-5">
-                  <p><span>Kháng phép theo cấp: </span>{{champ$.stats.spellblockperlevel}}</p>
-                </div>
-              </div>
+            <div class="box text-center use">
+              <p>Sử dụng</p>
+              <p class="use-type">{{champ$.partype}}</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-9 m-auto detail">
-        <h3 class="p-2 shadow">Tiểu sử</h3>
-        <p class="px-3 py-2">{{champ$.lore}}</p>
-      </div>
+      <div class="col-12 m-auto py-5 tip">
+        <div class="icon-border">
+            <h2 class="tips">Cách chơi</h2>
 
-      <div class="col-9 m-auto detail">
-        <h3 class="p-2">Mẹo sử dụng</h3>
-        <p class="px-3 py-2" *ngFor="let allytip of allytips$">- {{allytip}}</p>
-      </div>
-
-      <div class="col-9 m-auto detail">
-        <h3 class="p-2">Cách khắc chế</h3>
-        <p class="px-3 py-2" *ngFor="let enemytip of enemytips$">- {{enemytip}}</p>
-      </div>
-
-      <div class="col-9 m-auto detail">
-        <h3 class="p-2">Kỹ năng</h3>
-        <p>Nội tại</p>
-        <img src="http://ddragon.leagueoflegends.com/cdn/8.15.1/img/passive/{{champ$.passive.image.full}}" alt="">
-        <div *ngFor="let spell of spells$">
-          <p>{{spell.name}}</p>
-          <img src="http://ddragon.leagueoflegends.com/cdn/8.15.1/img/spell/{{spell.image.full}}" alt="">
+          <img src="./assets/img/highlight.png" class="highlight-left">
+          <img src="./assets/img/highlight.png" class="highlight-right">
         </div>
       </div>
 
-      <div class="col-9 m-auto py-1">
+      <div class="col-9 m-auto play-tip py-5">
+        <h2 class="mb-4">Cách sử dụng</h2>
+        <p *ngFor="let allytip of allytips$">- {{allytip}}</p>
+        <h2 class="mt-5 mb-4">Cách khắc chế</h2>
+        <p *ngFor="let enemytip of enemytips$">- {{enemytip}}</p>
+      </div>
+
+      <div class="col-12 m-auto py-5 tip">
+        <div class="icon-border">
+            <h2 class="tips">Trang phục</h2>
+
+          <img src="./assets/img/highlight.png" class="highlight-left">
+          <img src="./assets/img/highlight.png" class="highlight-right">
+        </div>
+      </div>
+
+      <div class="col-9 m-auto p-1">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item" *ngFor=" let skin of skins$ let i = index" [ngClass]="{'active' : i == 0}">
               <img class="d-block w-100" src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champ$.id}}_{{skin.num}}.jpg" alt="First slide">
               <div class="carousel-caption d-none d-md-block">
-                <h3>{{skin.name}}</h3>
+                <h3 class="skin-name">{{skin.name}}</h3>
 
               </div>
             </div>

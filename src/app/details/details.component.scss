@@ -107,13 +107,12 @@
 }
 
 .header{
-  height: 100vh;
+  height: 90vh;
   padding-top: 400px;
   h1{
     font-size: 100px;
     color: #937341;
     text-transform: uppercase;
-    font-family: Roboto Slab;
     font-weight: bold;
     padding: relative;
   }
@@ -131,10 +130,77 @@
 
 .blockquote{
   p{
-    color: #937341;
+    color: #cdbe7f;
+    text-align: justify;
   }
   cite{
-    color: #cdbe7f;
+    color: #937341;
+    font-size: 20px;
+  }
+}
+
+.icon-border{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  &:before{
+    position: absolute;
+    display: block;
+    content: '';
+    width: 6px;
+    height: 6px;
+    border: 1px solid #937341;
+    transform: rotate(45deg);
+    left: calc(100% + 44px);
+    top: calc(50% - 3px);
+  }
+  &:after{
+    position: absolute;
+    display: block;
+    content: '';
+    width: 6px;
+    height: 6px;
+    border: 1px solid #937341;
+    transform: rotate(45deg);
+    right: calc(100% + 44px);
+    top: calc(50% - 3px);
+  }
+  .highlight-left{
+    position: absolute;
+    display: block;
+    width: 500px;
+    height: 2px;
+    right: calc(100% + 50px);
+    top: calc(50% - 1px);
+    transform: rotateY(180deg);
+  }
+  .highlight-right{
+    position: absolute;
+    display: block;
+    width: 500px;
+    height: 2px;
+    left: calc(100% + 50px);
+    top: calc(50% - 1px);
+  }
+  .section-header{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    .champion-icon{
+      width: 110px;
+      height: 110px;
+      margin: -5px 0 0 -5px;
+    }
+  }
+  .frame{
+    position: absolute;
+    display: block;
+    width: 130px;
+    height: 130px;
+    top: -15px;
+    left: -15px
   }
 }
 
@@ -267,38 +333,135 @@
   background:linear-gradient(to left, rgba(#000,.7), rgba(#000, 0));
 }
 
-.loading-screen{
-  position: relative;
-  &:before{
-    position: absolute;
-    display: block;
-    content: '';
-    animation: run 2s linear infinite;
-    z-index: 1401;
+.use{
+  p{
+    color: #fff;
+    text-transform: uppercase;
+    margin: 10px auto;
+    font-size: 12px;
+  }
+  .use-type{
+    font-size: 20px;
+    color: #937341;
   }
 }
 
-@keyframes run{
-  0%{
+.champion-spell{
+  color: #fff;
+  padding-bottom: 0!important;
+}
+
+.detail-id{
+  visibility: hidden;
+  position: absolute;
+  display: block;
+  top: -300px;
+  left: -300px;
+}
+
+.passive-spell-name{
+  color: #937341;
+  font-weight: bold;
+  position: relative;
+  /* &:after{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: auto;
+    top: 100%;
     left: 0;
-    top: 80%;
-    width: 1px;
-    height: 1px;
-    background: #fff;
+    content: 'Nội tại';
+    color: #4542d9;
+    font-size: 14px;
+  } */
+}
+
+.passive-spell-desc{
+  color: #cdbe7f;
+}
+
+.spell-name{
+  color: #937341;
+  font-weight: bold;
+}
+
+.passive-spell-icon{
+  img{
+    width: 100%;
   }
-  25%{
-    top: 40%;
-    left: 0;
-    height: 10px;
+}
+
+.spell-icon{
+  width: 100%;
+}
+
+.spells{
+  border-top: 1px solid #cdbe7f;
+  display: flex;
+  /* padding-top: 10px; */
+}
+
+.desc{
+  color: #cdbe7f;
+}
+
+.resource{
+  display: flex;
+  vertical-align: bottom;
+  color: #cdbe7f;
+  img{
+    height: 18px;
+    padding-right: 10px;
   }
-  50%{
-    top: 0;
-    left: 0;
-    height: 1px;
+  p{
+    margin-bottom: 0;
+    padding-left: 10px;
+    color: #fff;
   }
-  100%{
-    top: 0;
-    left: 50%;
-    width: 10px;
+}
+
+.tips{
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: 26px;
+  color: #cdbe7f;
+  text-transform: uppercase
+}
+
+.play-tip{
+  h2{
+    color: #cdbe7f;
+    font-size: 34px;
   }
+  p{
+    color: #fff;
+    font-size: 18px;
+  }
+}
+
+.tip{
+  .icon-border{
+    &:before{
+      left: calc(100% + 64px);
+    }
+    &:after{
+      right: calc(100% + 64px);
+    }
+    .highlight-left{
+      right: calc(100% + 70px);
+    }
+    .highlight-right{
+      left: calc(100% + 70px);
+    }
+  }
+}
+
+.skin-name{
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
 }
